@@ -36,5 +36,5 @@ Search, removal, and insertion operations are thread-safety.
 ### Lookup
 [find](https://github.com/paulusmas/bmap/wiki/mpv::bmap::find) -- _finds element with specific key/value_
 
-
-[Wiki. mpv::bmap](https://github.com/paulusmas/bmap/wiki)
+***
+# [Wiki. mpv::bmap](https://github.com/paulusmas/bmap/wiki)
