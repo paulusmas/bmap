@@ -4,6 +4,7 @@
 #include <set>
 #include <memory>
 #include <mutex>
+
 #include "bmap_types.h"
 
 namespace mpv{
@@ -181,7 +182,7 @@ namespace mpv{
 
   public:
 
-#pragma region Public member-function insert/erase/find
+#pragma region Public member-function insert/erase/find/clear
 
     iterator find(const key_type& some_value){
       std::lock_guard<std::recursive_mutex> l_g(_mutex);
@@ -244,6 +245,11 @@ namespace mpv{
       return 0;      
     }
 
+    void clear(){
+      m_set_key.clear();
+      m_set_value.clear();
+    }
+
     iterator begin() {return m_set_key.begin();}
     const_iterator begin() const {return m_set_key.begin();}
     iterator end() {return m_set_key.end();}
@@ -252,7 +258,15 @@ namespace mpv{
     const_iterator rbegin() const {return m_set_key.rbegin();}
 
 #pragma endregion
-  };
+  
+    bool empty() const {
+      return m_set_key.empty();
+    }
+    size_t size() const{
+      //TODO: assert(m_set_key.size() == m_set_value.size()
+      return m_set_key.size();
+    }
+};
 
 #pragma region Binary Map for Equal Types (bmap_eq_types)
 
