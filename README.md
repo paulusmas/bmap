@@ -14,7 +14,7 @@ template<
 ```
 
 **mpv::bmap** is a sorted associative container that contains key-value pairs with unique keys and values. Keys are sorted by using the comparison function _**_KeyPr**_, values are sorted by using _**_ValuePr**_.
-Search, removal, and insertion operations are thread-safety.
+Search, removal, and insertion operations are thread-safety. This member functions that explicitly support these operations are efficient, performing them in a time that is on average proportional to the logarithm of the number of elements in the container.
 
 ### Iterators
 [begin](https://github.com/paulusmas/bmap/wiki/mpv::map::begin#mpvmapbegin) -- _returns an iterator to the beginning_
