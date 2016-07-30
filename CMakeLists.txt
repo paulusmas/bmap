@@ -1,0 +1,5 @@
+project(test_bmap)
+set(SOURCES test_bmap.cpp)
+set(HEADERS bmap/bmap_head.h bmap/bmap_types.h)
+include_directories("bmap/")
+add_executable(main ${SOURCES} ${HEADERS})
